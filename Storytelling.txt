@@ -1,0 +1,7 @@
+J'avais déjà le modèle de prédiction et les données. La question c'était : comment rendre tout ça utilisable sans ouvrir un notebook ?
+
+L'idée du dashboard c'est de mettre une interface devant ce qui existait déjà. Au lieu de modifier le code pour tester une prédiction, on sélectionne les deux équipes dans un menu et on clique. Le modèle tourne en arrière-plan, Streamlit affiche le résultat et les probabilités pour chaque issue.
+
+La deuxième page stats est venue naturellement — les graphiques attaque/défense que j'avais faits dans l'analyse, autant les rendre interactifs plutôt que de laisser des images statiques.
+
+Ce que j'aurais fait en plus avec plus de temps : ajouter un filtre par saison pour voir l'évolution des équipes sur les 10 ans, et afficher l'historique des confrontations entre les deux équipes choisies avant la prédiction .
