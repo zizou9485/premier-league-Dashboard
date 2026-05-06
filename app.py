@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 
 st.set_page_config(page_title="Premier League Dashboard", layout="wide")
 
-# --- CHARGEMENT ET ENTRAÎNEMENT ---
+# On charge et entraine le modéles
 @st.cache_resource
 def charger_modele():
     df = pd.read_csv("PL_10_ans.csv")
@@ -41,11 +41,11 @@ def charger_stats():
 modele, enc_equipes, enc_resultat, equipes = charger_modele()
 stats = charger_stats()
 
-# --- SIDEBAR ---
+
 st.sidebar.title("Premier League")
 page = st.sidebar.radio("Navigation", ["Prédiction", "Statistiques"])
 
-# --- PAGE PREDICTION ---
+# la page de prédiction
 if page == "Prédiction":
     st.title("Prédiction de match")
     st.markdown("Sélectionne deux équipes et le modèle prédit le résultat à partir de 10 ans de données.")
@@ -98,7 +98,7 @@ if page == "Prédiction":
             })
             st.bar_chart(proba_df.set_index("Issue"))
 
-# --- PAGE STATISTIQUES ---
+# La page des statistiques
 elif page == "Statistiques":
     st.title("Statistiques — Saison 2021-2022")
 
